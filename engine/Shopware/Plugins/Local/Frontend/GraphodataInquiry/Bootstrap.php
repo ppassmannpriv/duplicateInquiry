@@ -14,7 +14,7 @@
 * zur Übersicht.
 *
 */
-class Shopware_Plugins_Frontend_DuplicateInquiry_Bootstrap extends Shopware_Components_Plugin_Bootstrap
+class Shopware_Plugins_Frontend_GraphodataInquiry_Bootstrap extends Shopware_Components_Plugin_Bootstrap
 {
     /**
      * In der getCapabilities-Methode kann der Entwickler beeinflussen,
@@ -56,19 +56,26 @@ class Shopware_Plugins_Frontend_DuplicateInquiry_Bootstrap extends Shopware_Comp
     */
     public function getInfo() {
         return array(
+            // Die Plugin-Version.
             'version' => $this->getVersion(),
-            'copyright' => 'Copyright (c) 2014, Pieter Paßmann',
+            // Copyright-Hinweis
+            'copyright' => 'Copyright (c) 2014, graphodata AG',
+            // Lesbarer Name des Plugins
             'label' => $this->getLabel(),
-			'autor' => 'Pieter Paßmann',
+            // Info-Text, der in den Plugin-Details angezeigt wird
             'description' => file_get_contents($this->Path() . 'info.txt'),
-            'support' => 'http://www.turn-up.eu',
-            'link' => 'http://www.turn-up.eu',
+            // Anlaufstelle für den Support
+            'support' => 'http://www.graphodata.de',
+            // Hersteller-Seite
+            'link' => 'http://www.graphodata.de',
+            // Änderungen
             'changes' => array(
-                '0.0.1'=>array('releasedate'=>'2014-04-15', 'lines' => array(
-                    'First Test'
+                '1.0.0'=>array('releasedate'=>'2014-03-20', 'lines' => array(
+                    'Erster Release'
                 ))
             ),
-            'revision' => '3'
+            // Aktuelle Revision des Plugins
+            'revision' => '1'
         );
     }
  
@@ -206,7 +213,7 @@ class Shopware_Plugins_Frontend_DuplicateInquiry_Bootstrap extends Shopware_Comp
 		$mail->IsHTML(1);
 		$mail->From		= Shopware()->Config()->Mail;
 		$mail->Fromname	= Shopware()->Config()->Mail;
-		$mail->Subject = 'Ihre Anfrage';
+		$mail->Subject = 'Ihre Anfrage - Furthof Antikmöbel';
 		$mail->Body = $msg;
 		$mail->ClearAddresses();
 		$mail->AddAddress($email);
